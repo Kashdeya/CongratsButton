@@ -13,7 +13,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 version = "${version}"
 group= "com.kashdeya.congrats" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "congrats"
+archivesBaseName = "congrats_button"
 
 minecraft {
     runDir = "run"
