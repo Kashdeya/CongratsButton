@@ -63,12 +63,15 @@ public class CongratsButton {
 	          }
 	        }
 	        EntityPlayer player = event.getEntityPlayer();
-	        for (Achievement a : AchievementList.ACHIEVEMENTS) {
-	          player.addStat(a);
+	        if (ConfigHandler.Achievements)
+	        {
+	        	for (Achievement a : AchievementList.ACHIEVEMENTS) {
+	        		player.addStat(a);
+	        	}
 	        }
 	        if ((player instanceof EntityPlayerMP))
 	        {
-	          SPacketTitle packet = new SPacketTitle(SPacketTitle.Type.TITLE, new TextComponentString("Congratulations!!!").setStyle(new Style().setColor(TextFormatting.RED)), 5, 60, 20);
+	          SPacketTitle packet = new SPacketTitle(SPacketTitle.Type.TITLE, new TextComponentString("ConfigHandler.Congrats").setStyle(new Style().setColor(TextFormatting.RED)), ConfigHandler.FadeinTime, ConfigHandler.DisplayTime, ConfigHandler.FadeoutTime);
 	          ((EntityPlayerMP)player).connection.sendPacket(packet);
 	        }
 	        if (!world.isRemote) {
