@@ -26,7 +26,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 
-@Mod(modid="CB", name="Congrats Button", version="1.0.0", acceptedMinecraftVersions="[1.10.2]")
+@Mod(modid="CB", name="Congrats Button", version="1.0.1", acceptedMinecraftVersions="[1.10.2]")
 
 public class CongratsButton {
 	
