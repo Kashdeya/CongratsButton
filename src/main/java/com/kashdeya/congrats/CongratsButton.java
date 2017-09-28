@@ -11,8 +11,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.play.server.SPacketTitle;
-import net.minecraft.stats.Achievement;
-import net.minecraft.stats.AchievementList;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.Style;
@@ -63,13 +61,7 @@ public class CongratsButton {
 	          }
 	        }
 	        EntityPlayer player = event.getEntityPlayer();
-	        if (ConfigHandler.Achievements)
-	        {
-	        	for (Achievement a : AchievementList.ACHIEVEMENTS) {
-	        		player.addStat(a);
-	        	}
-	        }
-	        if ((player instanceof EntityPlayerMP))
+	       if ((player instanceof EntityPlayerMP))
 	        {
 	          SPacketTitle packet = new SPacketTitle(SPacketTitle.Type.TITLE, new TextComponentString("ConfigHandler.Congrats").setStyle(new Style().setColor(TextFormatting.RED)), ConfigHandler.FadeinTime, ConfigHandler.DisplayTime, ConfigHandler.FadeoutTime);
 	          ((EntityPlayerMP)player).connection.sendPacket(packet);
@@ -121,7 +113,7 @@ public class CongratsButton {
 	            double z = player.posZ + (Math.random() - 0.5D) * 20.0D;
 	            
 	            EntityFireworkRocket rocket = new EntityFireworkRocket(world, x, y, z, stack);
-	            world.spawnEntityInWorld(rocket);
+	            world.spawnEntity(rocket);
 	          }
 	        }
 	      }
